@@ -1,0 +1,91 @@
+
+/* Ergänzungen und Änderungen zum Original bootstrap-CSS von A. Blaschka, 2012 */
+
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.sidebar-nav {
+  padding: 9px 0;
+}
+
+h1#callout {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+h1 {
+	margin-bottom: 15px;
+}
+h3 {
+	margin-bottom: 5px;
+}
+
+.hero-unit {
+  padding: 30px;
+}
+
+div.callo {
+	background-image: url("../img/booksCallou.jpg");
+	background-repeat:no-repeat;
+	background-position: right;
+}
+
+i {
+  padding: 3px;
+}
+
+td.right {
+  text-align: right;
+}
+
+.accordion-heading {
+	background-color: #EEEEEE;
+}
+
+.shorty {
+	width: 3em;
+}
+
+.medi {
+	width: 7em;
+}
+
+.long {
+	width: 9em;
+}
+
+.supi {
+	width: 35em;
+}
+
+.ff {
+	margin-top:5px;
+	margin-bottom:5px;
+	vertical-align: center;
+}
+
+fieldset{
+	margin-top: 20px;
+}
+
+#synonyms {
+	margin-top: 15px;
+}
+
+.I1 {
+	background-color: #e0b3b3;
+}
+
+.I2 {
+	background-color: #c5e0b3;
+}
+
+.I3 {
+	background-color: #eff1ee;
+}
+
+.I4 {
+	background-color: #deebfd;
+}

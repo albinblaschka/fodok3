@@ -1,0 +1,12 @@
+body {
+  background-image :url(../gfx/booksHGMain.jpg);
+  background-position: bottom right;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+

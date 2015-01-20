@@ -1,0 +1,89 @@
+<div id="tab1">
+	<div class="form">
+		<form id="Zitat" action="fodokSaveData.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+			<p><input type="hidden" name="formId" value="Zitat" /></p>
+			<ol>
+				<li class="myform"><label class="tabular" for="author">Autor(en):</label> <input id="author" type="text" name="author" size="40" maxlength="1024" value="" onfocus="systemMessage('author','getHelptext','Zitat')" onblur="systemMessage('author','validate','Zitat')" onkeypress="errorflag.setState('changed')" onclick="errorflag.setState('changed')" /></li>
+				<li class="myform"><label class="tabular" for="year">Jahr des Erscheinens:</label> <input id="year" type="text" name="year" size="4" maxlength="4" value="" onfocus="systemMessage('year','getHelptext','Zitat')" onblur="systemMessage('year','validate', 'Zitat')" onkeypress="errorflag.setState('changed')" onclick="errorflag.setState('changed')" /></li>
+				<li class="myform"><label class="tabular" for="ftitle">Titel:</label> <input id="ftitle" type="text" name="ftitle" size="40" maxlength="255" value="" onfocus="systemMessage('ftitle','getHelptext','Zitat')" onblur="systemMessage('ftitle','validate','Zitat')" onkeypress="errorflag.setState('changed')" onclick="errorflag.setState('changed')" /></li>
+				<li class="myform"><label class="tabular" for="citation">Erschienen in, Zitat:</label> <input id="citation" type="text" name="citation" size="40" maxlength="255" value="" onfocus="systemMessage('citation','getHelptext','Zitat')" onblur="systemMessage('ftitle','validate','Zitat')" onkeypress="errorflag.setState('changed')" onclick="errorflag.setState('changed')" /></li>
+			</ol>
+		</form>
+	</div>
+</div>
+
+<div id="tab2">
+	<div class="form">
+		<form id="Autorenschaft" action="save_authorship.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+			<p><input type="hidden" name="formId" value="Autorenschaft" /></p>
+			<ol>
+				<li class="myform"><label class="tabular" for="authorship">#Autor#:</label> <select id="authorship" size="1" name="authorship"></select></li>
+			</ol>
+		</form>
+	</div>
+</div>
+
+<div id="tab3">
+	<div class="form">
+		<form id="Typ" action="fodokEditorStorage.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+		<p><input type="hidden" name="formId" value="Typ" /></p>
+		<ol>
+			<li class="myform"><label class="tabular" for="type">Typ/Art/Kategorie:</label>
+				<select id="type" size="1" name="type" onfocus="systemMessage('type','getHelptext','Typ')" onblur="systemMessage('type','validate','Typ')" onkeypress="errorflag.setState('changed')" onclick="errorflag.setState('changed')">
+					<option value="*">Bitte w&#xE4;hlen Sie!</option>
+					<option value="inter">Fachpublikation, international</option>
+					<option value="nation">Fachpublikation, national</option>
+					<option value="review">Reviewed</option>
+				</select>
+			</li>
+			<li class="myform"><label class="tabular" for="menge">Anzahl Seiten/Stunden/Tage:</label> <input id="menge" type="text" name="menge" size="" maxlength="" value="" /></li>
+			<li class="myform"><label class="tabular" for="projekt1">Zuordnung zu 1. Projekt:</label> 
+				<select id="projekt2" size="1" name="projekt2">
+					<option value="00">ohne Projektzuordnung</option>
+					<option class="I0" value="2000">2000: Projektvorbereitung 349 (2000)</option>
+					<option class="I1" value="3972">3972: Landw. Res.: Kleine Wiederk&#xE4;uer 912 (3972)</option>
+					<option class="I2" value="1381">1381: Amtliche Sortenwertpr&#xFC;fung: Gr&#xFC;nlandkulturen 103 (1381)</option>
+					<option class="I3" value="3963">3963: Landw. Res.: Ressource Institut 3 903 (3963)</option>
+					<option class="I4" value="1330">1330: Hoh. Leistungen/SGG/Zertifizierung/Zulassungsverfahren 101 (1330)</option>
+					<option class="I9" value="2362">2362: Forschungswerkstatt 302 (2362)</option>
+				</select>
+			</li>
+			<li class="myform"><label class="tabular" for="projekt2">Zuordnung zu 2. Projekt (25%):</label> 
+				<select id="projekt2" size="1" name="projekt2">
+					<option value="00">ohne Projektzuordnung</option>
+					<option class="I0" value="2000">2000: Projektvorbereitung 349 (2000)</option>
+					<option class="I1" value="3972">3972: Landw. Res.: Kleine Wiederk&#xE4;uer 912 (3972)</option>
+					<option class="I2" value="1381">1381: Amtliche Sortenwertpr&#xFC;fung: Gr&#xFC;nlandkulturen 103 (1381)</option>
+					<option class="I3" value="3963">3963: Landw. Res.: Ressource Institut 3 903 (3963)</option>
+					<option class="I4" value="1330">1330: Hoh. Leistungen/SGG/Zertifizierung/Zulassungsverfahren 101 (1330)</option>
+					<option class="I9" value="2362">2362: Forschungswerkstatt 302 (2362)</option>
+				</select>
+			</li>
+		</form>
+	</div>
+</div>
+
+<div id="tab4">
+	<div class="form">
+		<form id="Datenfreigabe" action="fodokSaveData.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+			<p><input type="hidden" name="formId" value="Datenfreigabe" /></p>
+			<ol>
+				<li class="myform"><label class="tabular" for="thefile">Belegdatei hochladen:</label> <button id="thefile" type="button" name="thefile" value="Datei hochladen" onclick="openPopUP('fodokUpload.php', '')">Datei hochladen</button></li>
+				<li class="myform"><label class="tabular" for="quoteweb">Zitat f&#xFC;r das Web freigeben:</label> <input id="quoteweb" class="radio" type="checkbox" name="quoteweb" value="TRUE" /></li>
+				<li class="myform"><label class="tabular" for="fileweb">Datei f&#xFC;r das Web freigeben:</label> <input id="fileweb" class="radio" type="checkbox" name="fileweb" value="TRUE" /></li>
+			</ol>
+		</form>
+	</div>
+</div>
+
+<div id="tab5">
+	<div class="form">
+		<form id="SaveData" action="saveData.php" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+			<p><input type="hidden" name="formId" value="SaveData" /></p>
+			<ol>
+				<li class="myform"><label class="tabular" for="saveit">Vollst&#xE4;ndigen Datensatz speichern:</label> <button id="saveit" type="button" name="saveit" value="Vollst&#xE4;ndigen Datensatz speichern" onclick="initiateSaveAsset()">Vollst&#xE4;ndigen Datensatz speichern</button></li>
+			</ol>
+		</form>
+	</div>
+</div>
+

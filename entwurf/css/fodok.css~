@@ -1,0 +1,26 @@
+
+/* Ergänzungen und Änderungen zum Original bootstrap-CSS von A. Blaschka, 2012 */
+
+h1#callout {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.hero-unit {
+  padding: 30px;
+}
+
+div.callo {
+	/*background-image: url("../img/books.jpg");
+	background-repeat:no-repeat;
+	background-position: bottom;
+	background-color: #FFFFFF; */
+}
+
+i {
+  padding: 3px;
+}
+
+td.right {
+  text-align: right;
+}
