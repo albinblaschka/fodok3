@@ -4,8 +4,8 @@ fodok.getMediaTypes = (function(mtype) {
 	var mediaTypes = '<select id="item" class="form-control input-sm" name="item" required="required" autocomplete="off">';
 	mediaTypes += '<option value="*">Bitte wählen!</option>';
 	var cnt = 0;
-	$.each(fodok.pubTypes[mtype]['bibtex_de'], function( index, value ) {
-		mediaTypes += '<option value="' + value + '">' + value + '</option>';
+	$.each(fodok.pubTypes[mtype][0], function(index,value ) {
+		mediaTypes += '<option value="' + index + '">' + value + '</option>';
 		cnt++;
 	});
 	mediaTypes += '</select>';

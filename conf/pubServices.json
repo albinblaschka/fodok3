@@ -1,0 +1,8 @@
+{
+    "article": ["DOI","ISSN"],
+    "inproceedings": ["DOI","ISBN","ISSN"],
+    "book":["ISBN"],
+    "booklet": ["ISSN", "ISBN"],
+    "incollection":["ISBN"],
+    "report":["ISBN","ISSN"]
+}

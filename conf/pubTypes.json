@@ -1,137 +1,52 @@
 {
-    "Reviewed": {
-        "pubtype": "Reviewed",
-        "bibtex_de": [
-            "Artikel",
-            "Tagungsbeitrag"
-        ],
-        "bibtex": [
-            "article",
-            "inproceedings"
-        ]
-    },
-    "Fachpublikation, national": {
-        "pubtype": "Fachpublikation",
-        "bibtex_de": [
-            "Artikel",
-            "Tagungsbeitrag",
-            "Buch",
-            "Buchkapitel",
-            "Broschüre"
-        ],
-        "bibtex": [
-            "article",
-            "inproceedings",
-            "book",
-            "incollection",
-            "booklet"
-        ]
-    },
-    "Fachpublikation, international": {
-        "pubtype": "Fachpublikation",
-        "bibtex_de": [
-            "Artikel",
-            "Tagungsbeitrag",
-            "Buch",
-            "Buchkapitel",
-            "Broschüre"
-        ],
-        "bibtex": [
-            "article",
-            "inproceedings",
-            "book",
-            "incollection",
-            "booklet"
-        ]
-    },
-    "Poster, national": {
-        "pubtype": "Poster",
-        "bibtex_de": [
-            "Poster"
-        ],
-        "bibtex": [
-            "inproceedings"
-        ]
-    },
-    "Poster, international": {
-        "pubtype": "Poster",
-        "bibtex_de": [
-            "Poster"
-        ],
-        "bibtex": [
-            "inproceedings"
-        ]
-    },
-    "Abschlussbericht Forschungsprojekt": {
-        "pubtype": "Bericht",
-        "bibtex_de": [
-            "Bericht"
-        ],
-        "bibtex": [
-            "techreport"
-        ]
-    },
-    "Abschlussbericht WT": {
-        "pubtype": "Bericht",
-        "bibtex_de": [
-            "Bericht"
-        ],
-        "bibtex": [
-            "techreport"
-        ]
-    },
-    "Zwischenbericht": {
-        "pubtype": "Bericht",
-        "bibtex_de": [
-            "Bericht"
-        ],
-        "bibtex": [
-            "techreport"
-        ]
-    },
-    "Erstellung Fachgruppen-Publikation, Richtlinie": {
-        "pubtype": "Bericht",
-        "bibtex_de": [
-            "Bericht"
-        ],
-        "bibtex": [
-            "techreport"
-        ]
-    },
-    "Überarbeitung Fachgruppen-Publikation, Richtlinie": {
-        "pubtype": "Bericht",
-        "bibtex_de": [
-            "Bericht"
-        ],
-        "bibtex": [
-            "techreport"
-        ]
-    },
-    "Vortrag Wissenschaftlich/nat.": {
-        "pubtype": "Vortrag",
-        "bibtex_de": [
-            "Vortrag"
-        ],
-        "bibtex": [
-            "inproceedings"
-        ]
-    },
-    "Vortrag Wissenschaftlich/internat.": {
-        "pubtype": "Vortrag",
-        "bibtex_de": [
-            "Vortrag"
-        ],
-        "bibtex": [
-            "inproceedings"
-        ]
-    },
-    "Vortrag fachlich": {
-        "pubtype": "Vortrag",
-        "bibtex_de": [
-            "Vortrag"
-        ],
-        "bibtex": [
-            "inproceedings"
-        ]
-    }
+    "Reviewed": [{
+            "article":"Artikel",
+            "inproceedings":"Tagungsbeitrag",
+            "book":"Buch",
+            "incollection":"Buchkapitel"
+    }],
+    "Fachpublikation, national": [{
+            "article":"Artikel",
+            "inproceedings":"Tagungsbeitrag",
+            "book":"Buch",
+            "incollection":"Buchkapitel",
+            "booklet":"Broschüre"
+    }],
+    "Fachpublikation, international": [{
+            "article":"Artikel",
+            "inproceedings":"Tagungsbeitrag",
+            "book":"Buch",
+            "incollection":"Buchkapitel",
+            "booklet":"Broschüre"
+    }],
+    "Poster, national": [{
+            "inproceedings":"Poster"
+    }],
+    "Poster, international": [{
+            "inproceedings":"Poster"
+    }],
+    "Abschlussbericht Forschungsprojekt": [{
+            "Bericht":"techreport"
+    }],
+    "Abschlussbericht WT": [{
+            "Bericht":"techreport"
+    }],
+    "Zwischenbericht": [{
+            "Bericht":"techreport"
+    }],
+    "Erstellung Fachgruppen-Publikation, Richtlinie":[{
+            "Bericht":"techreport"
+    }],
+    "Überarbeitung Fachgruppen-Publikation, Richtlinie": [{
+            "Bericht":"techreport"
+    }],
+    "Vortrag Wissenschaftlich/national":[{
+            "inproceedings":"Poster"
+    }],
+    "Vortrag Wissenschaftlich/international": [{
+            "inproceedings":"Poster"
+    }],
+    "Vortrag fachlich": [{
+            "inproceedings":"Poster"
+    }]
 }
