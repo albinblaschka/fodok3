@@ -1,0 +1,12 @@
+{
+"article":{
+	"Journal":{"caption":"Journal/Zeitschrift", "required":"Yes","type":"text"},
+	"Year":	{"caption":"Jahr", "required":"Yes","type":"number"},
+	"Volume":{"caption":"Band", "required":"No","type":"number"},
+	"Number":{"caption":"Nummer", "required":"No","type":"number"},
+	"PageFrom":{"caption":"Startseite", "required":"Yes","type":"number"},
+	"PageTo":{"caption":"Endseite", "required":"Yes","type":"number"},
+	"DOI":{"caption":"DOI", "required":"No","type":"text"},
+	"ISSN":{"caption":"ISSN-Nummer", "required":"No","type":"text"}
+    }
+}

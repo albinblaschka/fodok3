@@ -189,22 +189,16 @@
     <!-- Buttons erst nach Auswahl des Publikationstyps und Medium einblenden:
 	    Varianten entsprechend Auswahl: DOI/ISSN bei Journal/Zeitschrift, ISBN bei Buch! -->
 
-    <!-- "Medium" entsprechend Publikationstyp einblenden...
-				<option value="journal" autocomplete="off">Journal, Zeitschrift</option>
-				<option value="book" autocomplete="off">Buch</option>
-				<option value="inproceedings" autocomplete="off">Tagungsbeitrag</option>
-		    </select>
-    -->
-
-    <!-- Formular-Teile als Snippets auslagern und zu Beginn einlesen? -->
-
-
     <div class="page-header">
 	<h1><small>FoDok::</small>Eingabe <span id="ptype"></span></h1>
 	<div id="messages" class="col-sm-12"></div>
 	<form id="publikation" class="col-sm-12" method="post" action="backend/fodokDispatch.php">
 
 	<div class="row">
+		<div class="col-md-2 sidebar">
+			<h3>Optionen</h3>
+			<div id="bttns"></div>
+		</div>
 		<div class="col-sm-2 text-right"><strong>Publikationstyp</strong></div>
 		<div class="col-sm-4">
 		    <select id="pubType" class="form-control input-sm" name="pubType" required="required" autocomplete="off" style="max-width:100%;"></select>
@@ -243,12 +237,10 @@
 				<input class="form-control input-sm" name="author[]" type="text" placeholder="Titel" required="required" style="max-width:100%;" />
 		    </div>
 		</div>
+		<hr/>
+		<div id="inputFields" class="row"></div>
 
-		<div class="row">
-			<hr/>
-			<hr/>
-		</div>
-
+		<hr/>
 		<div class="row">
 			<div class="col-sm-2 text-right"><strong>Projektzuordnung</strong></div>
 			<div class="col-sm-5">
@@ -275,8 +267,48 @@
 </div> <!-- /container -->
 
 
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+<!--- Modals -->
+<!-- Für Daten-Übernahme via DOI -->
+<div class="modal fade" id="doiModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+	    <div class="modal-content">
+	        <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Daten via DOI einlesen...</h4>
+	        </div>
+			<div class="modal-body">
+				<p><label for="DOIInput">DOI:</label> <input class="form-control input-sm" id="DOIInput" type="text" placeholder="DOI" required="required" />
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+				<button type="button" class="btn btn-primary" id="fetchDOIData">Daten holen</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Für Daten-Übernahme via ISSN -->
+<div class="modal fade" id="issnModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+	    <div class="modal-content">
+	        <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Daten zur Zeitschrift via ISSN einlesen...</h4>
+	        </div>
+			<div class="modal-body">
+				<p><label for="ISSNInput">ISSN:</label> <input class="form-control input-sm" name="ISSNInput" type="text" placeholder="ISSN" required="required" />
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+				<button type="button" class="btn btn-primary" id="fetchISSNData">Daten holen</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+</body>
 </html>

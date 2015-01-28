@@ -3,6 +3,6 @@
     "inproceedings": ["DOI","ISBN","ISSN"],
     "book":["ISBN"],
     "booklet": ["ISSN", "ISBN"],
-    "incollection":["ISBN"],
+    "incollection":["DOI","ISBN"],
     "report":["ISBN","ISSN"]
 }
