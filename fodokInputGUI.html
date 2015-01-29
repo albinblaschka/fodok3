@@ -32,6 +32,7 @@
     <!-- TODO: Eigene JS-Funktionen in eine Datei zusammenfassen? -->
     <script src="js/insertNameByAPK.js"></script>
     <script src="js/getMediaTypes.js"></script>
+    <script src="js/addAuthorInputs.js"></script>
 
     <script>
     // TODO: Komentare! Komentare! Kommentare!
@@ -123,13 +124,7 @@
 			});
 
 			$('#addAuthor').click(function() {
-				fodok.authorCnt++;
-				var aship = fodok.addAuthorSnippet.replace(/°/g, fodok.authorCnt);
-				$('#authors').before(aship);
-				$('#aship_'+fodok.authorCnt).val('zweit');
-				$('#APK_'+fodok.authorCnt).change(function() {
-					 fodok.insertNameByAPK($(this).val());
-				});
+				var addedInputs = fodok.addAuthorInputs();
 			});
 
 			$('#APK_1').blur(function() {
@@ -234,7 +229,7 @@
 		<div class="row">
 		    <div class="col-sm-2 text-right"><strong>Titel</strong></div>
 		    <div class="col-sm-10">
-				<input class="form-control input-sm" name="author[]" type="text" placeholder="Titel" required="required" style="max-width:100%;" />
+				<input class="form-control input-sm" id="titel" name="titel" type="text" placeholder="Titel" required="required" style="max-width:100%;" />
 		    </div>
 		</div>
 		<hr/>
