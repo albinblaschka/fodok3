@@ -8,4 +8,10 @@ fodok.addAuthorInputs = (function (){
 		fodok.insertNameByAPK($(this).val());
 	});
 
+	$('#lastName_' + fodok.authorCnt).change(function() {
+		if($('#APK_' + fodok.authorCnt).val() == '') {
+			fodok.insertAPK($(this).val());
+		}
+	});
+
 });

@@ -30,6 +30,7 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- TODO: Eigene JS-Funktionen in eine Datei zusammenfassen? -->
+	<!-- insertNameByAPK.js umbenennen in InfobyAPK oder so, siehe Datei... -->
     <script src="js/insertNameByAPK.js"></script>
     <script src="js/getMediaTypes.js"></script>
     <script src="js/addAuthorInputs.js"></script>
@@ -94,12 +95,10 @@
 
 			$.ajax({
 				url: "backend/getData.php",
-				data: {
-					which: 'projects'
-				},
+				data: {which: 'projects'},
 				type: "GET",
 				dataType : "json",
-				success: function( json ) {
+				success: function(json) {
 					fodok.projects = json;
 					fodok.projects = fodok.projects['data'];
 					fodok.projectsDropdown = '';
@@ -130,6 +129,14 @@
 			$('#APK_1').blur(function() {
 				$('#messages').html('');
 				fodok.insertNameByAPK($(this).val());
+			});
+
+			$('#lastName_1').blur(function() {
+				if($('#APK_1').val() == '') {
+					fodok.insertAPK($(this).val());
+				}else{
+					console.log('Nö');
+				}
 			});
 
 		}); // Document ready...
@@ -291,7 +298,7 @@
 		        <h4 class="modal-title" id="myModalLabel">Daten zur Zeitschrift via ISSN einlesen...</h4>
 	        </div>
 			<div class="modal-body">
-				<p><label for="ISSNInput">ISSN:</label> <input class="form-control input-sm" name="ISSNInput" type="text" placeholder="ISSN" required="required" />
+				<p><label for="ISSNInput">ISSN:</label> <input class="form-control input-sm" id="ISSNInput" name="ISSNInput" type="text" placeholder="ISSN" required="required" />
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>

@@ -78,13 +78,17 @@ fodok.getColumns = (function(which){
 });
 
 fodok.fetchWebData = (function(which){
-	
+
 	var DOIURL = 'http://api.crossref.org/works/';
-	var ISSNUrl = 'http://xissn.worldcat.org/webservices/xid/issn/||ISSN||?method=getHistory&format=json';
-	var ISBNUrl = 'http://xisbn.worldcat.org/webservices/xid/isbn/978-0-19-958067-5?method=getMetadata&format=json&fl=*';
-	
-	var convertISBNUrl = 'http://xisbn.worldcat.org/webservices/xid/isbn/978-3-902849-09-0?method=to10&format=json'
-	
+
+	var ISSNUrl = 'http://xissn.worldcat.org/webservices/xid/issn/';
+	var ISSNParams = '?method=getHistory&format=json';
+
+	//var ISSNUrl = 'http://api.crossref.org/works/journals/';
+	// = 'http://xissn.worldcat.org/webservices/xid/issn/||ISSN||
+	//var ISBNUrl = 'http://xisbn.worldcat.org/webservices/xid/isbn/978-0-19-958067-5?method=getMetadata&format=json&fl=*';
+	//var convertISBNUrl = 'http://xisbn.worldcat.org/webservices/xid/isbn/978-3-902849-09-0?method=to10&format=json'
+
 	switch(which){
 		case 'DOI':
 			// jQuery.get('http://api.crossref.org/works/10.1111/gfs.12063')
@@ -117,6 +121,7 @@ fodok.fetchWebData = (function(which){
 				var splitted = pages.split('-');
 				$('#pageFrom').val(splitted[0]);
 				$('#pageTo').val(splitted[1]);
+				$('#issn').val(ref.ISSN[0]);
 			})
 				.done(function() {
 					$('#doiModal').modal('hide');
@@ -132,10 +137,20 @@ fodok.fetchWebData = (function(which){
 			break;
 		case 'ISSN':
 			var theISSN = $('#ISSNInput').val();
-			var request = ISSNUrl.replace('||ISSN||', theISSN);
-			var response = jQuery.get(request, function(){
-			      console.log(repsonse);
+			var request = ISSNUrl + theISSN + ISSNParams;
+			var data = {"type":'issn', "item":theISSN};
+			$.ajax({
+				url: "backend/getWebData.php",
+				type: "GET",
+				data:{query: data},
+				dataType : "json",
+				success: function(json) {
+					$('#journal').val(json.group[0].list[0].title);
+					$('#issn').val(json.group[0].list[0].issn);
+					$('#issnModal').modal('hide');
+				}
 			});
+
 			break;
 		default:
 	}
