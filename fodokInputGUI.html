@@ -148,109 +148,110 @@
 <div class="container">
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-		        <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	        </button>
-	        <a class="navbar-brand" href="fodokInput.html">FoDok 3 | Gallifrey</a>
-        </div>
-	    <div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li class="dropdown active">
-				    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-					    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editieren <span class="caret"></span>
-				    </a>
-			        <ul class="dropdown-menu" role="menu">
-				        <li><a href="fodokInput.html">Daten eingeben</a></li>
-				        <li><a href="fodokEdit.html">Daten ändern</a></li>
-			        </ul>
-				</li>
-		        <li class="dropdown">
-			        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-				        <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Ausgabe <span class="caret"></span>
-			        </a>
-			        <ul class="dropdown-menu" role="menu">
-				        <li><a href="">Persönliche Publikationsliste</a></li>
-				        <li><a href="">Publikationsliste Einheit</a></li>
-				        <li><a href="">Publikationsliste Anstalt</a></li>
-			        </ul>
-		        </li>
-		        <li><a href="#"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> Punkte</a></li>
-            </ul>
-		    <ul class="nav navbar-nav navbar-right">
-				<li><a href="">Hilfe &amp; Dokumentation</a></li>
-		    </ul>
-	    </div><!--/.nav-collapse -->
-    </div>
+	    <div class="container-fluid">
+	        <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				    <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+		        </button>
+		        <a class="navbar-brand" href="fodokInput.html">FoDok 3 | Gallifrey</a>
+	        </div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown active">
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							<span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editieren <span class="caret"></span>
+					    </a>
+				        <ul class="dropdown-menu" role="menu">
+							<li><a href="fodokInput.html">Daten eingeben</a></li>
+						    <li><a href="fodokEdit.html">Daten ändern</a></li>
+				        </ul>
+					</li>
+			        <li class="dropdown">
+				        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+					        <span class="glyphicon glyphicon-list" aria-hidden="true"></span> Ausgabe <span class="caret"></span>
+				        </a>
+				        <ul class="dropdown-menu" role="menu">
+					        <li><a href="">Persönliche Publikationsliste</a></li>
+					        <li><a href="">Publikationsliste Einheit</a></li>
+					        <li><a href="">Publikationsliste Anstalt</a></li>
+				        </ul>
+			        </li>
+			        <li><a href="#"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> Punkte</a></li>
+	            </ul>
+			    <ul class="nav navbar-nav navbar-right">
+					<li style="padding-right:10px;"><a href="">Hilfe &amp; Dokumentation</a></li>
+			    </ul>
+		    </div><!--/.nav-collapse -->
+	    </div>
     </nav>
 
     <!-- Buttons erst nach Auswahl des Publikationstyps und Medium einblenden:
 	    Varianten entsprechend Auswahl: DOI/ISSN bei Journal/Zeitschrift, ISBN bei Buch! -->
 
-    <div class="page-header">
-	<h1><small>FoDok::</small>Eingabe <span id="ptype"></span></h1>
-	<div id="messages" class="col-sm-12"></div>
-	<form id="publikation" class="col-sm-12" method="post" action="backend/fodokDispatch.php">
+	<div id="messages"></div>
 
-	<div class="row">
-		<div class="col-md-2 sidebar">
-			<h3>Optionen</h3>
-			<div id="bttns"></div>
-		</div>
-		<div class="col-sm-2 text-right"><strong>Publikationstyp</strong></div>
-		<div class="col-sm-4">
-		    <select id="pubType" class="form-control input-sm" name="pubType" required="required" autocomplete="off" style="max-width:100%;"></select>
-	    </div>
-	    <div id="medium" class="col-sm-3"></div>
-
+	<div class="col-md-2 sidebar">
+	    <h3>Optionen</h3>
+	    <div id="bttns"></div>
 	</div>
-
-		<div id="firstauthor">
-			<div id="author_1" class="row">
-			    <div class="col-sm-2 text-right"><strong>Autorenschaft</strong></div>
-				<div class="col-sm-1">
-				    <input id="APK_1" class="form-control input-sm" name="apk[]" type="text" placeholder="APK" style="max-width:100%;" />
-				</div>
-				<div class="col-sm-3">
-				    <input id="lastName_1" class="form-control input-sm" name="author[]" type="text" placeholder="Nachname" required="required" style="max-width:100%;" />
-				</div>
-				<div class="col-sm-1">
-				    <input id="initials_1" class="form-control input-sm" name="initials[]" type="text" placeholder="Initiale" required="required" style="max-width:100%;" />
-				</div>
-				<div class="col-sm-2">
-				    <select id="aship_1" class="form-control input-sm" name="authorship[]" required="required" autocomplete="off" style="max-width:100%;">
-						<option value="erst" selected="selected" >Erstautor</option>
-						<option value="zweit">Zweitautor</option>
-				    </select>
-				</div>
-				<div class="col-sm-2"><a id="addAuthor" class="btn btn-sm btn-success" href="#" role="button">Autor hinzufügen</a></div>
+	
+	<form id="publikation" class="col-md-12" method="post" action="backend/fodokDispatch.php">
+	
+	<div class="container">
+		<div class="row">
+			<h1 class="col-md-offset-1"><small>FoDok::</small>Eingabe</h1>
+			<hr />
+		    <div class="col-md-2 text-right"><strong>Publikationstyp</strong></div>
+		    <div class="col-md-4">
+			    <select id="pubType" class="form-control input-sm" name="pubType" required="required" autocomplete="off" style="max-width:100%;"></select>
+		    </div>
+		    <div id="medium" class="col-md-3"></div>
+		</div>
+		<div id="author_1" class="row">
+			<div class="col-md-2 text-right"><strong>Autorenschaft</strong></div>
+			<div class="col-md-1">
+				<input id="APK_1" class="form-control input-sm" name="apk[]" type="text" placeholder="APK" style="max-width:100%;" />
 			</div>
+			<div class="col-md-3">
+				<input id="lastName_1" class="form-control input-sm" name="author[]" type="text" placeholder="Nachname" required="required" style="max-width:100%;" />
+			</div>
+			<div class="col-md-1">
+				<input id="initials_1" class="form-control input-sm" name="initials[]" type="text" placeholder="Initiale" required="required" style="max-width:100%;" />
+			</div>
+			<div class="col-md-2">
+				<select id="aship_1" class="form-control input-sm" name="authorship[]" required="required" autocomplete="off" style="max-width:100%;">
+					<option value="erst" selected="selected" >Erstautor</option>
+					<option value="zweit">Zweitautor</option>
+				</select>
+			</div>
+			<div class="col-md-2"><a id="addAuthor" class="btn btn-sm btn-success" href="#" role="button">Autor hinzufügen</a></div>
 		</div>
 		<div id="authors" class="row"></div>
 
-
 		<div class="row">
-		    <div class="col-sm-2 text-right"><strong>Titel</strong></div>
-		    <div class="col-sm-10">
+			<div class="col-md-2 text-right"><strong>Titel</strong></div>
+			<div class="col-md-10">
 				<input class="form-control input-sm" id="titel" name="titel" type="text" placeholder="Titel" required="required" style="max-width:100%;" />
 		    </div>
 		</div>
+		
 		<hr/>
+		
 		<div id="inputFields" class="row"></div>
 
 		<hr/>
+		
 		<div class="row">
-			<div class="col-sm-2 text-right"><strong>Projektzuordnung</strong></div>
-			<div class="col-sm-5">
+			<div class="col-md-2 text-right"><strong>Projektzuordnung</strong></div>
+			<div class="col-md-5">
 				<select id="project_1" class="form-control input-sm" name="project_1" required="required" autocomplete="off" style="max-width:100%;">
 					<option value="*" >Projektzuteilung 1</option>
 				</select>
 			</div>
-			<div class="col-sm-5">
+			<div class="col-md-5">
 				<select id="project_2" class="form-control input-sm" name="project_2" required="required" autocomplete="off" style="max-width:100%;">
 					<option value="*" >Projektzuteilung 2</option>
 				</select>
@@ -258,15 +259,15 @@
 		</div>
 
 		<div class="row">
-			<div class="col-sm-2 text-right"><strong>Zusammenfassung</strong></div>
-			<div class="col-sm-10">
+			<div class="col-md-2 text-right"><strong>Zusammenfassung</strong></div>
+			<div class="col-md-10">
 				<textarea class="textarea"  placeholder="Eingabe Abstract" style="width:100%; height: 200px; font-size: 14px; line-height: 18px;"></textarea>
 			</div>
 		</div>
-
-	    </form>
-
-</div> <!-- /container -->
+			
+	</div>
+	</form>
+</div><!-- /container -->
 
 
 <!--- Modals -->
@@ -276,7 +277,7 @@
 	    <div class="modal-content">
 	        <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalLabel">Daten via DOI einlesen...</h4>
+		        <h4 class="modal-title">Daten via DOI einlesen...</h4>
 	        </div>
 			<div class="modal-body">
 				<p><label for="DOIInput">DOI:</label> <input class="form-control input-sm" id="DOIInput" type="text" placeholder="DOI" required="required" />
@@ -295,7 +296,7 @@
 	    <div class="modal-content">
 	        <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalLabel">Daten zur Zeitschrift via ISSN einlesen...</h4>
+		        <h4 class="modal-title">Daten zur Zeitschrift via ISSN einlesen...</h4>
 	        </div>
 			<div class="modal-body">
 				<p><label for="ISSNInput">ISSN:</label> <input class="form-control input-sm" id="ISSNInput" name="ISSNInput" type="text" placeholder="ISSN" required="required" />
