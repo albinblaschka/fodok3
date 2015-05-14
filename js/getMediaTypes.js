@@ -1,7 +1,7 @@
 
 fodok.getMediaTypes = (function(mtype) {
 	$('#medium').html('');
-	var mediaTypes = '<select id="item" class="form-control input-sm" name="item" required="required" autocomplete="off">';
+	var mediaTypes = '<select id="item" class="form-control input-sm" name="item" required="required" autocomplete="off" style="max-width:100%;">';
 	mediaTypes += '<option value="*">Bitte wählen!</option>';
 	var cnt = 0;
 	$.each(fodok.pubTypes[mtype][0], function(index,value ) {
