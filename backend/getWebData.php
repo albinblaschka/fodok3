@@ -7,15 +7,15 @@ $params = '?format=json';
 
 
 switch($_GET['query']['type']){
-        case 'issn':
-            $requestURL = $ISSNUrl. $_GET['query']['item'].$params;
-            $response = file_get_contents($requestURL);
-            break;
-        case 'isbn':
-            $requestURL = $ISBNUrl. $_GET['query']['item'].$params;
-            $response = file_get_contents($requestURL);
-            break;
-        default:
+case 'issn':
+    $requestURL = $ISSNUrl. $_GET['query']['item'].$params;
+    $response = file_get_contents($requestURL);
+    break;
+case 'isbn':
+    $requestURL = $ISBNUrl. $_GET['query']['item'].$params;
+    $response = file_get_contents($requestURL);
+    break;
+default:
 }
 
 echo $response;

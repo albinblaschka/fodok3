@@ -1,6 +1,7 @@
 
 <?php
-function doQuery($query) {
+function doQuery($query) 
+{
     
     try{
         $DBConnect = new DB_Connect('postgres');
